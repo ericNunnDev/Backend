@@ -1,5 +1,5 @@
-const jwt = require("jsonwebtoken");
-const jwtKey = process.env.JWT_SECRET || "JWT SECRET NOT FOUND in .env";
+const jwt = require('jsonwebtoken');
+const jwtKey = process.env.JWT_SECRET || 'JWT SECRET NOT FOUND in .env';
 
 module.exports = {
   authenticate,
@@ -19,7 +19,7 @@ function authenticate(req, res, next) {
     });
   } else {
     return res.status(401).json({
-      message: "No token provided, must be set on Authorization Header"
+      message: 'No token provided, must be set on Authorization Header'
     });
   }
 }
