@@ -1,5 +1,17 @@
 # Backend - Eric Nunn
 
+##### Data Schema (data structure)
+
+`User`
+
+```
+{
+    "username":'admin',  // required
+    "password":'admin'   // required
+}
+```
+
+
 | Method | Endpoint            | Description                                                                                                                                                                                             |
 | ------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | POST   | /register           | Register a new `user` using the information provided in the command.                                                                                                                           |
