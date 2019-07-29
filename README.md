@@ -10,7 +10,12 @@
     "password":'admin'   // required
 }
 ```
+`Test user account`
 
+```
+username:admin
+password:password
+```
 
 | Method | Endpoint            | Description                                                                                                                                                                                             |
 | ------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -27,9 +32,9 @@
 ```
 {
     "userId": 9,
-    "username": "admsin",
+    "username": "admin",
     "token": "gakjsdgfjkwhgjfgmjagjhgfkeawgwaefsdfsadfasefsafsafas",
-    "user_type": "employee"
+    "user_type": "voter"
 }
 ```
 
@@ -39,8 +44,8 @@
 ```
 {
     "userId": "9",
-    "username": "admsin",
-    "user_type": "employee",
+    "username": "admin",
+    "user_type": "voter",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbXNpbiIsImlhdCI6MTU0OTU5ODY2MX0.JsWkCCCjRg9pDzJ3LOTTW8wf3tjqQ6129u8SHTEt7mA"
 }
 ```
