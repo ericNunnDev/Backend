@@ -4,8 +4,8 @@ module.exports = {
     const users = await db('users');
     return users;
   },
-  insert: async credential => {
-    const userId = await db('users').insert(credential);
+  add: async credential => {
+    const userId = await db('users').add(credential);
     return userId;
   },
   update: async (id, change) => {
@@ -14,7 +14,7 @@ module.exports = {
       .update(change);
     return userId;
   },
-  remove: async id => {
+  delete: async id => {
     const count = await db('users')
       .where({ id })
       .del();

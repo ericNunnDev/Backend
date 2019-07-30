@@ -18,9 +18,7 @@ function authenticate(req, res, next) {
       }
     });
   } else {
-    return res.status(401).json({
-      message: 'No token provided, must be set on Authorization Header'
-    });
+    return res.status(401).json({ message: 'No token provided, must be set on Authorization Header' });
   }
 }
 
