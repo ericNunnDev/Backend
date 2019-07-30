@@ -15,6 +15,9 @@
 ```
 username:admin
 password:password
+
+username: eric
+password: eric
 ```
 
 | Method | Endpoint            | Description                                                                                                                                                                                             |
