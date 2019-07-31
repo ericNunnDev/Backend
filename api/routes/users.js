@@ -5,32 +5,42 @@ const { generateToken } = require('../../auth/auth');
 
 router.get('/', async (req, res) => {
     try {
-        res.status(200).json({ message: 'sanity == good' });
-    } catch(e) {
-        res.status(500).json({ message: 'Internal Error. Please try again.' });
-    }
-});
+        res.sendStatus(200)
+    } catch (e) { res.sendStatus(500); }
+  });
 
 router.post('/register', async (req, res) => {
+  const credentials = req.body;
     try {
-        let user = req.body;
-        const hash = bcrypt.hashSync(user.password, 10); // 2 ^ n
-        user.password = hash;
-      
-        db.add(user)
-          .then(saved => {
-            res.status(201).json(saved);
+        let user = await db('users')
+        .where({ username: credentials.username })
+        first();
+        if(user) {
+          res.status(400).json({ message: `${user.username} is already taken. Please choose another username` })
+        } else {
+          const hash = bcrypt.hashSync(user.password, 10);
+          credentials.password = hash;
+          
+          const userId = await db('users').add(credentials);
+          user = await db('users')
+          .where({ id: userId[0] })
+          .first();
+          const token = await generateToken(user);
+          res.status(201).json({
+            userId: userId[0],
+            username: user.username,
+            token,
+            user_type: user.user_type
           });
-    } catch(e) {
-        res.status(500).json(e);
-      };
+        }
+    } catch(e) { res.sendStatus(500); }
   });
   
   router.post('/login', async (req, res) => {
    try {
-    let { username, password } = req.body;
+    let { username, password } = req.body; 
   
-    db.getAllUsers({ username })
+    db.findBy({ username })
       .first()
       .then(user => {
         if (user && bcrypt.compareSync(password, user.password)) {
@@ -45,7 +55,7 @@ router.post('/register', async (req, res) => {
         }
       });
    } catch(e) {
-        res.status(500).json({ message: 'Internal Error. Please try again.', e });
+      res.sendStatus(500);
     };
   });
 
