@@ -5,11 +5,11 @@ const { generateToken } = require('../../auth/auth');
 
 router.get('/', async (req, res) => {
     try {
-        res.status(200).json({ message: 'sanity == good' });
-    } catch(e) {
-        res.status(500).json({ message: 'Internal Error. Please try again.' });
+        res.status(200).json({ message: 'sanity == good' })
+    } catch (e) {
+        res.status(500).json({ message: 'Internal Error. Please try again.'})
     }
-});
+  });
 
 router.post('/register', async (req, res) => {
     try {
@@ -30,7 +30,7 @@ router.post('/register', async (req, res) => {
    try {
     let { username, password } = req.body; 
   
-    db.getAllUsers({ username })
+    db.findBy({ username })
       .first()
       .then(user => {
         if (user && bcrypt.compareSync(password, user.password)) {
