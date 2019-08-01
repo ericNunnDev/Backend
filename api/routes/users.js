@@ -11,29 +11,16 @@ router.get('/', async (req, res) => {
   });
 
 router.post('/register', async (req, res) => {
-  const credentials = req.body;
     try {
-        let user = await db('users')
-        .where({ username: credentials.username })
-        first();
-        if(user) {
-          res.status(400).json({ message: `${user.username} is already taken. Please choose another username` })
-        } else {
+        let user = await db.add('users')
           const hash = bcrypt.hashSync(user.password, 10);
-          credentials.password = hash;
-          
-          const userId = await db('users').add(credentials);
-          user = await db('users')
-          .where({ id: userId[0] })
-          .first();
+          user.password = hash;
+        
           const token = await generateToken(user);
           res.status(201).json({
-            userId: userId[0],
             username: user.username,
             token,
-            user_type: user.user_type
           });
-        }
     } catch(e) { res.sendStatus(500); }
   });
   
@@ -41,7 +28,7 @@ router.post('/register', async (req, res) => {
    try {
     let { username, password } = req.body; 
   
-    db.findBy({ username })
+    db.find({ username })
       .first()
       .then(user => {
         if (user && bcrypt.compareSync(password, user.password)) {
