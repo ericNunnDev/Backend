@@ -12,6 +12,11 @@ module.exports = {
         directory: './data/seeds',
       },
     },
+    pool: {
+      afterCreate: (connection, done) => {
+        connection.run('PRAGMA foreign_keys = ON', done)
+      },
+    }, 
     testing: {
       client: 'sqlite3',
       connection: {
