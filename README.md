@@ -26,6 +26,67 @@ password: eric
 | POST   | /login              | Use the credentials provided in the command to authenticate the user. On successful login, display a message with the username and a JWT token                                                           |
 | GET    | /candidates            | If the `user` is logged in, display an array of all the `candidates` contained in the database. If the `user` is not logged in, display a message:"No token provided, must be set on Authorization Header" |
 | GET    | /candidates/:id        | If the `user` is logged in, display an object of the `candidate`                                                                                                                                          |
+### GET:
+
+###### /candidates
+
+- returns a list of candidates
+
+```
+axios
+    .get('yourURL/candidates')
+    .then(res=> console.log(res))
+    .catch(err=>console.log(err))
+```
+
+- console logs
+
+```
+       [
+    {
+        "id": 1,
+        "candidate_name": "Audrie Druett",
+        "email": "adruett@rediff.com",
+        "gender": "Female",
+        "phone_number": "318-246-4248",
+        "party": "radical",
+        "state": "Louisiana"
+    },
+    {
+        "id": 2,
+        "candidate_name": "Gustavus Jarrard",
+        "email": "gjarrard1@engadget.com",
+        "gender": "Male",
+        "phone_number": "602-935-0680",
+        "party": "moratorium",
+        "state": "Arizona"
+    }]
+```
+
+###### /candidates/:id
+
+- returns a candidate object with the specified id
+
+```
+axios
+    .get('yourURL/candidates/1')
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+```
+
+- console logs
+
+```
+        {
+        "id": 1,
+        "candidate_name": "Audrie Druett",
+        "email": "adruett@rediff.com",
+        "gender": "Female",
+        "phone_number": "318-246-4248",
+        "party": "radical",
+        "state": "Louisiana"
+}
+```
 
 ### POST:
 
