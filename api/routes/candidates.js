@@ -16,7 +16,7 @@ router.get('/:id', async (req, res) => {
         if(candidate) {
             res.status(200).json(candidate);
         } else {
-            res.sendStatus(400);
+            res.sendStatus(404);
         }
     } catch(e) {
         res.sendStatus(500);

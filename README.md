@@ -44,22 +44,22 @@ axios
 ```
        [
     {
-        "id": 1,
-        "candidate_name": "Audrie Druett",
-        "email": "adruett@rediff.com",
-        "gender": "Female",
-        "phone_number": "318-246-4248",
-        "party": "radical",
-        "state": "Louisiana"
+        "id":1,
+        "candidate_name":"Hilma Eichmann",
+        "political_party":"Democrat",
+        "email":"Toy_Pollich@gmail.com",
+        "phone_number":"(091) 926-3914",
+        "state":"NJ",
+        "zip":"58778-3836"
     },
     {
-        "id": 2,
-        "candidate_name": "Gustavus Jarrard",
-        "email": "gjarrard1@engadget.com",
-        "gender": "Male",
-        "phone_number": "602-935-0680",
-        "party": "moratorium",
-        "state": "Arizona"
+        "id":2,
+        "candidate_name":"Chasity Volkman",
+        "political_party":"Democrat",
+        "email":"Marie46@yahoo.com",
+        "phone_number":"1-330-261-8815",
+        "state":"CO",
+        "zip":"47299"
     }]
 ```
 
