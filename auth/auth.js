@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const jwtKey = process.env.JWT_SECRET || 'JWT SECRET NOT FOUND in .env';
+const env = require('../config/environment');
 
 module.exports = {
   authenticate,
@@ -9,7 +9,7 @@ module.exports = {
 function authenticate(req, res, next) {
   const token = req.headers.authorization;
   if (token) {
-    jwt.verify(token, jwtKey, (err, decoded) => {
+    jwt.verify(token, env.jwtKey, (err, decoded) => {
       if (err) {
         res.status(401).json(err);
       } else {
@@ -24,8 +24,11 @@ function authenticate(req, res, next) {
 
 function generateToken(user) {
   const payload = {
+    sub: user.id,
     username: user.username
-  };
-  const secret = jwtKey;
-  return jwt.sign(payload, secret);
+  }
+  const options = {
+    expiresIn: '1d',
+  }
+  return jwt.sign(payload, env.jwtKey, options);
 }
