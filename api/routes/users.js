@@ -5,7 +5,8 @@ const { generateToken } = require('../../auth/auth');
 
 router.get('/', async (req, res) => {
     try {
-        res.sendStatus(200)
+      const users = await db.find();
+        res.json(users)
     } catch (e) { res.sendStatus(500); }
   });
 
@@ -45,7 +46,6 @@ router.post('/register', async (req, res) => {
       .then(user => {
         if (user && bcrypt.compareSync(password, user.password)) {
           const token = generateToken(user);
-  
           res.status(200).json({
             message: `Welcome ${user.username}!`,
             token,
@@ -54,9 +54,7 @@ router.post('/register', async (req, res) => {
           res.status(401).json({ message: 'Invalid Credentials' });
         }
       });
-   } catch(e) {
-      res.sendStatus(500);
-    };
+   } catch(e) { res.sendStatus(500); }
   });
 
 module.exports = router;
