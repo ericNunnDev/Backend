@@ -32,7 +32,7 @@ exports.seed = function(knex) {
           candidate_name: faker.name.findName(),
           political_party: faker.random.arrayElement(['Democrat', 'Republican']),
           email: faker.internet.email(),
-          phone_number: faker.phone.phoneNumber(),
+          phone_number: faker.phone.phoneNumber(),  
           state: faker.address.stateAbbr(),
           zip: faker.address.zipCode()
         },

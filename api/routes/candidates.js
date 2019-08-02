@@ -18,9 +18,29 @@ router.get('/:id', async (req, res) => {
         } else {
             res.sendStatus(404);
         }
-    } catch(e) {
-        res.sendStatus(500);
-    }
+    } catch(e) { res.sendStatus(500); }
+});
+
+router.post('/:id', async (req, res) => {
+    try {
+      const candidates = await db.add(req.body);
+      if(candidates) {
+          res.status(201).json(candidates);
+      } else {
+          res.sendStatus(304);
+      }
+    } catch(e) { res.sendStatus(500); }
+});
+
+router.put('/:id', async (req, res) => {
+    try {
+      const candidates = await db.update(req.params.id);
+      if(candidates) {
+          res.status(200).json(candidates);
+      } else {
+          res.sendStatus(404);
+      }
+    } catch(e) { res.sendStatus(500); }
 });
 
 module.exports = router;

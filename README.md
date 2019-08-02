@@ -2,6 +2,19 @@
 
 ##### Data Schema (data structure)
 
+`Candidate`
+
+```
+{
+    "candidate_name":"Hilma Eichmann",
+    "political_party":"Democrat",
+    "email":"Toy_Pollich@gmail.com",
+    "phone_number":"(091) 926-3914",
+    "state":"NJ",
+    "zip":"58778-3836"
+}
+```
+
 `User`
 
 ```
@@ -16,8 +29,8 @@
 username:admin
 password:password
 
-username: eric
-password: eric
+username:eric
+password:eric
 ```
 
 | Method | Endpoint            | Description                                                                                                                                                                                             |
@@ -26,6 +39,7 @@ password: eric
 | POST   | /login              | Use the credentials provided in the command to authenticate the user. On successful login, display a message with the username and a JWT token                                                           |
 | GET    | /candidates            | If the `user` is logged in, display an array of all the `candidates` contained in the database. If the `user` is not logged in, display a message:"No token provided, must be set on Authorization Header" |
 | GET    | /candidates/:id        | If the `user` is logged in, display an object of the `candidate`                                                                                                                                          |
+| PUT    | /candidates/:id        | Updates a `worker` with new information and display the updated `worker`'s details                                                                                                                                      |
 ### GET:
 
 ###### /candidates
@@ -114,4 +128,17 @@ axios
     "user_type": "voter",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbXNpbiIsImlhdCI6MTU0OTU5ODY2MX0.JsWkCCCjRg9pDzJ3LOTTW8wf3tjqQ6129u8SHTEt7mA"
 }
+```
+
+### PUT:
+
+###### /candidates/:id
+
+- Updates an existing candidate with the change, and returns the id of the candidate selected
+
+```
+axios
+    .put('yourURL/candidates/id',change)
+    .then(res=> console.log(res))
+    .catch(err=> console.log(err))
 ```
