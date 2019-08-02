@@ -5,9 +5,7 @@ router.get('/', async (req, res) => {
     try {
         const candidates = await db.find();
         res.status(200).json(candidates);
-    } catch(e) {
-        res.sendStatus(500);
-    }
+    } catch(e) { res.sendStatus(500); }
 });
 
 router.get('/:id', async (req, res) => {
@@ -40,6 +38,17 @@ router.put('/:id', async (req, res) => {
       } else {
           res.sendStatus(404);
       }
+    } catch(e) { res.sendStatus(500); }
+});
+
+router.delete('/:id', async (req, res) => {
+    try {
+        const delId = await db.remove(req.params.id);
+        if(delId > 0) {
+            res.status(200).json({ message: 'Candidate has been removed.', db })
+        } else {
+            res.sendStatus(304);
+        }
     } catch(e) { res.sendStatus(500); }
 });
 
