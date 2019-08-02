@@ -6,7 +6,7 @@ exports.seed = function(knex) {
       return knex('candidates').insert([
         {
           candidate_name: faker.name.findName(),
-          political_party: 'Democrat',
+          political_party: faker.random.arrayElement(['Democrat', 'Republican']),
           email: faker.internet.email(),
           phone_number: faker.phone.phoneNumber(),
           state: faker.address.stateAbbr(),
@@ -14,7 +14,7 @@ exports.seed = function(knex) {
         },
         {
           candidate_name: faker.name.findName(),
-          political_party: 'Democrat',
+          political_party: faker.random.arrayElement(['Democrat', 'Republican']),
           email: faker.internet.email(),
           phone_number: faker.phone.phoneNumber(),
           state: faker.address.stateAbbr(),
@@ -22,7 +22,7 @@ exports.seed = function(knex) {
         },
         {
           candidate_name: faker.name.findName(),
-          political_party: 'Democrat',
+          political_party: faker.random.arrayElement(['Democrat', 'Republican']),
           email: faker.internet.email(),
           phone_number: faker.phone.phoneNumber(),
           state: faker.address.stateAbbr(),
@@ -30,7 +30,15 @@ exports.seed = function(knex) {
         },
         {
           candidate_name: faker.name.findName(),
-          political_party: 'Democrat',
+          political_party: faker.random.arrayElement(['Democrat', 'Republican']),
+          email: faker.internet.email(),
+          phone_number: faker.phone.phoneNumber(),  
+          state: faker.address.stateAbbr(),
+          zip: faker.address.zipCode()
+        },
+        {
+          candidate_name: faker.name.findName(),
+          political_party: faker.random.arrayElement(['Democrat', 'Republican']),
           email: faker.internet.email(),
           phone_number: faker.phone.phoneNumber(),
           state: faker.address.stateAbbr(),
@@ -38,7 +46,7 @@ exports.seed = function(knex) {
         },
         {
           candidate_name: faker.name.findName(),
-          political_party: 'Democrat',
+          political_party: faker.random.arrayElement(['Democrat', 'Republican']),
           email: faker.internet.email(),
           phone_number: faker.phone.phoneNumber(),
           state: faker.address.stateAbbr(),
@@ -46,15 +54,7 @@ exports.seed = function(knex) {
         },
         {
           candidate_name: faker.name.findName(),
-          political_party: 'Democrat',
-          email: faker.internet.email(),
-          phone_number: faker.phone.phoneNumber(),
-          state: faker.address.stateAbbr(),
-          zip: faker.address.zipCode()
-        },
-        {
-          candidate_name: faker.name.findName(),
-          political_party: 'Democrat',
+          political_party: faker.random.arrayElement(['Democrat', 'Republican']),
           email: faker.internet.email(),
           phone_number: faker.phone.phoneNumber(),
           state: faker.address.stateAbbr(),

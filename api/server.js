@@ -9,4 +9,8 @@ server.use(express.json());
 server.use('/users', usersRoute);
 server.use('/candidates', candidatesRoute);
 
+server.get('/', (req, res) => {
+    res.send('Where art thou, sanity?');
+});
+
 module.exports = server;
