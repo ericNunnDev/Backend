@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
 router.post('/register', async (req, res) => {
     try {
-        let user = await db.add('users')
+        let user = await db.add(req.body)
           const hash = bcrypt.hashSync(user.password, 10);
           user.password = hash;
         

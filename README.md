@@ -143,3 +143,16 @@ axios
     .then(res=> console.log(res))
     .catch(err=> console.log(err))
 ```
+
+### DELETE:
+
+###### /candidates/:id
+
+- Removes the selected candidate, and returns message upon successful request
+
+```
+axios
+    .delete('yourURL/candidates/id')
+    .then(res=> console.log(res))
+    .catch(err=> console.log(err))
+```

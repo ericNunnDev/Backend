@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try {
-      const candidates = await db.update(req.params.id);
+      const candidates = await db.update(req.params.id, req.body);
       if(candidates) {
           res.status(200).json(candidates);
       } else {
@@ -45,7 +45,7 @@ router.delete('/:id', async (req, res) => {
     try {
         const delId = await db.remove(req.params.id);
         if(delId > 0) {
-            res.status(200).json({ message: 'Candidate has been removed.', db })
+            res.status(200).json({ message: 'Candidate has been removed.', })
         } else {
             res.sendStatus(304);
         }
