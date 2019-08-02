@@ -39,7 +39,8 @@ password:eric
 | POST   | /login              | Use the credentials provided in the command to authenticate the user. On successful login, display a message with the username and a JWT token                                                           |
 | GET    | /candidates            | If the `user` is logged in, display an array of all the `candidates` contained in the database. If the `user` is not logged in, display a message:"No token provided, must be set on Authorization Header" |
 | GET    | /candidates/:id        | If the `user` is logged in, display an object of the `candidate`                                                                                                                                          |
-| PUT    | /candidates/:id        | Updates a `worker` with new information and display the updated `worker`'s details                                                                                                                                      |
+| PUT    | /candidates/:id        | Updates a `candidate` with new information and display the updated `candidate`'s details                                                                                                                                      |
+| POST   | /candidates            | Creates a new `candidate` and dispalys the `id` of the created `candidate`                                                                                                                                     |
 ### GET:
 
 ###### /candidates

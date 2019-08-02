@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
     } catch(e) { res.sendStatus(500); }
 });
 
-router.post('/:id', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
       const candidates = await db.add(req.body);
       if(candidates) {
