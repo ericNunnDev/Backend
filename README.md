@@ -41,11 +41,12 @@ password:eric
 | GET    | /candidates/:id        | If the `user` is logged in, display an object of the `candidate`                                                                                                                                          |
 | PUT    | /candidates/:id        | Updates a `candidate` with new information and display the updated `candidate`'s details                                                                                                                                      |
 | POST   | /candidates            | Creates a new `candidate` and dispalys the `id` of the created `candidate`                                                                                                                                     |
+| DELETE    | /candidates/:id        | Removes a `candidate` and returns a 200 status with JSON message `Candidate has been removed.`                                                                                                                                   |
 ### GET:
 
 ###### /candidates
 
-- returns a list of candidates
+- Returns a list of candidates
 
 ```
 axios
@@ -80,7 +81,7 @@ axios
 
 ###### /candidates/:id
 
-- returns a candidate object with the specified id
+- Returns a candidate object with the specified id
 
 ```
 axios
@@ -107,7 +108,7 @@ axios
 
 ###### /register
 
-- register an user and returns the id of the created user
+- Register a user and returns the id of the created user
 
 - returns
 ```
@@ -121,7 +122,7 @@ axios
 
 ###### /login
 
-- logs the user in and returns a token
+- Logs the user in and returns a token
 ```
 {
     "userId": "9",
@@ -148,7 +149,7 @@ axios
 
 ###### /candidates/:id
 
-- Removes the selected candidate, and returns message upon successful request
+- Removes the selected candidate object 
 
 ```
 axios
