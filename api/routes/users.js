@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const db = require('../../data/helpers/userDb');
 const bcrypt = require('bcryptjs');
-const { generateToken } = require('../../auth/auth');
+const { generateToken, authenticate } = require('../../auth/auth');
 
 router.get('/', async (req, res) => {
     try {
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
 router.post('/register', async (req, res) => {
     try {
-        let user = await db.add(req.body)
+          let user = req.body;
           const hash = bcrypt.hashSync(user.password, 10);
           user.password = hash;
         

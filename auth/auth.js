@@ -6,16 +6,13 @@ module.exports = {
   generateToken
 };
 
-function authenticate(req, res, next) {
-  const token = req.headers.authorization;
+async function authenticate(req, res, next) {
+  const token = req.get('Authorization');
   if (token) {
-    jwt.verify(token, env.jwtKey, (err, decoded) => {
-      if (err) {
-        res.status(401).json(err);
-      } else {
+    jwt.verify(token, env.jwtKey, (e, decoded) => {
+      if (e) return res.sendStatus(401);
         req.decoded = decoded;
         next();
-      }
     });
   } else {
     return res.status(401).json({ message: 'No token provided, must be set on Authorization Header' });
@@ -25,10 +22,11 @@ function authenticate(req, res, next) {
 function generateToken(user) {
   const payload = {
     sub: user.id,
-    username: user.username
-  }
+    username: user.username,
+    password: user.password
+  };
   const options = {
     expiresIn: '1d',
-  }
+  };
   return jwt.sign(payload, env.jwtKey, options);
-}
+};
