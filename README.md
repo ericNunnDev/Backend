@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/express.svg)](https://badge.fury.io/js/express)
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 
 # Local Voter Guide Backend API - Eric Nunn
