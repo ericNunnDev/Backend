@@ -17,14 +17,19 @@ To get the server running locally:
 - **knex seed:run** to clear the DB and populate it with seed data **** Password for all seed users is "password" ****
 
 ## Technology Stack
-
-- Express [![npm version](https://badge.fury.io/js/express.svg)](https://badge.fury.io/js/express)
-- JSON Web Tokens (JWT) [![npm version](https://badge.fury.io/js/jwt.svg)](https://badge.fury.io/js/jwt)
-- BcryptJS [![npm version](https://badge.fury.io/js/bcrypt.svg)](https://badge.fury.io/js/bcrypt)
-- Axios [![npm version](https://badge.fury.io/js/axios.svg)](https://badge.fury.io/js/axios)
-- Knex [![npm version](https://badge.fury.io/js/knex.svg)](https://badge.fury.io/js/knex)
-- FakerJS [![npm version](https://badge.fury.io/js/faker.svg)](https://badge.fury.io/js/faker)
-- SQLite3 [![npm version](https://badge.fury.io/js/sqlite3.svg)](https://badge.fury.io/js/sqlite3)
+ [![npm version](https://badge.fury.io/js/express.svg)](https://badge.fury.io/js/express)
+- Express
+[![npm version](https://badge.fury.io/js/jwt.svg)](https://badge.fury.io/js/jwt)
+- JSON Web Tokens (JWT) 
+ [![npm version](https://badge.fury.io/js/bcrypt.svg)](https://badge.fury.io/js/bcrypt)
+- BcryptJS
+- Axios
+[![npm version](https://badge.fury.io/js/knex.svg)](https://badge.fury.io/js/knex)
+- Knex 
+[![npm version](https://badge.fury.io/js/faker.svg)](https://badge.fury.io/js/faker)
+- FakerJS 
+[![npm version](https://badge.fury.io/js/sqlite3.svg)](https://badge.fury.io/js/sqlite3)
+- SQLite3 
 
 ## Data Schema (data structure)
 
