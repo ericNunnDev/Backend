@@ -1,8 +1,3 @@
-[![npm version](https://badge.fury.io/js/express.svg)](https://badge.fury.io/js/express)
-[![npm version](https://badge.fury.io/js/bcrypt.svg)](https://badge.fury.io/js/bcrypt)
-[![npm version](https://badge.fury.io/js/jwt.svg)](https://badge.fury.io/js/jwt)
-[![npm version](https://badge.fury.io/js/sqlite3.svg)](https://badge.fury.io/js/sqlite3)
-[![npm version](https://badge.fury.io/js/faker.svg)](https://badge.fury.io/js/faker)
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 
 # Local Voter Guide Backend API - Eric Nunn
@@ -23,13 +18,13 @@ To get the server running locally:
 
 ## Technology Stack
 
-- Express 
-- JSON Web Tokens (JWT)
-- BcryptJS
-- Axios
-- Knex
-- FakerJS
-- SQLite3
+- Express [![npm version](https://badge.fury.io/js/express.svg)](https://badge.fury.io/js/express)
+- JSON Web Tokens (JWT) [![npm version](https://badge.fury.io/js/jwt.svg)](https://badge.fury.io/js/jwt)
+- BcryptJS [![npm version](https://badge.fury.io/js/bcrypt.svg)](https://badge.fury.io/js/bcrypt)
+- Axios [![npm version](https://badge.fury.io/js/axios.svg)](https://badge.fury.io/js/axios)
+- Knex [![npm version](https://badge.fury.io/js/knex.svg)](https://badge.fury.io/js/knex)
+- FakerJS [![npm version](https://badge.fury.io/js/faker.svg)](https://badge.fury.io/js/faker)
+- SQLite3 [![npm version](https://badge.fury.io/js/sqlite3.svg)](https://badge.fury.io/js/sqlite3)
 
 ## Data Schema (data structure)
 
