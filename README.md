@@ -1,4 +1,7 @@
 [![npm version](https://badge.fury.io/js/express.svg)](https://badge.fury.io/js/express)
+[![npm version](https://badge.fury.io/js/bcrypt.svg)](https://badge.fury.io/js/bcrypt)
+[![npm version](https://badge.fury.io/js/jwt.svg)](https://badge.fury.io/js/jwt)
+[![npm version](https://badge.fury.io/js/sqlite3.svg)](https://badge.fury.io/js/sqlite3)
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 
 # Local Voter Guide Backend API - Eric Nunn
