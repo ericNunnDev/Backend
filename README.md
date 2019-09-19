@@ -17,18 +17,12 @@ To get the server running locally:
 - **knex seed:run** to clear the DB and populate it with seed data **** Password for all seed users is "password" ****
 
 ## Technology Stack
- [![npm version](https://badge.fury.io/js/express.svg)](https://badge.fury.io/js/express) <br />
 - Express
-[![npm version](https://badge.fury.io/js/jwt.svg)](https://badge.fury.io/js/jwt) <br />
 - JSON Web Tokens (JWT) 
- [![npm version](https://badge.fury.io/js/bcrypt.svg)](https://badge.fury.io/js/bcrypt) <br />
 - BcryptJS
 - Axios
-[![npm version](https://badge.fury.io/js/knex.svg)](https://badge.fury.io/js/knex) <br />
 - Knex 
-[![npm version](https://badge.fury.io/js/faker.svg)](https://badge.fury.io/js/faker) <br />
 - FakerJS 
-[![npm version](https://badge.fury.io/js/sqlite3.svg)](https://badge.fury.io/js/sqlite3) <br />
 - SQLite3 
 
 ## Data Schema (data structure)
