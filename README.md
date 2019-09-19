@@ -1,3 +1,5 @@
+![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+
 # Local Voter Guide Backend API - Eric Nunn
 
 #### Backend delpoyed at [Heroku](https://localvoterguide-backend.herokuapp.com/) <br>
@@ -13,6 +15,16 @@ To get the server running locally:
 - **npm test** to start server using testing environment
 - **knex migrate:latest** to create the tabes in the dev environment
 - **knex seed:run** to clear the DB and populate it with seed data **** Password for all seed users is "password" ****
+
+## Technology Stack
+
+- Express 
+- JSON Web Tokens (JWT)
+- BcryptJS
+- Axios
+- Knex
+- FakerJS
+- SQLite3
 
 ## Data Schema (data structure)
 
