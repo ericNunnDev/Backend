@@ -1,6 +1,20 @@
-# Backend - Eric Nunn
+# Local Voter Guide Backend API - Eric Nunn
 
-##### Data Schema (data structure)
+#### Backend delpoyed at [Heroku](https://localvoterguide-backend.herokuapp.com/) <br>
+
+## Getting started
+
+To get the server running locally:
+
+- Clone this repo
+- **npm install** to install all required dependencies
+- **npm start** to start the local server
+- **knex migrate:latest --env=testing** To set up the testing database.
+- **npm test** to start server using testing environment
+- **knex migrate:latest** to create the tabes in the dev environment
+- **knex seed:run** to clear the DB and populate it with seed data **** Password for all seed users is "password" ****
+
+## Data Schema (data structure)
 
 `Candidate`
 
