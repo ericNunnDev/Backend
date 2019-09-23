@@ -2,6 +2,9 @@
 
 # Local Voter Guide Backend API - Eric Nunn
 
+## Description
+The Local Voter Guide API is designed to be used to educate members of the United States Electorate about candidates, candidates political positions, candidates contact information; plus voting times and locations based on a location users enter.
+
 #### Backend delpoyed at [Heroku](https://localvoterguide-backend.herokuapp.com/) <br>
 
 ## Getting started
