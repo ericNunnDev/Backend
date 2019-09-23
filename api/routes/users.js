@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const db = require('../../data/helpers/userDb');
 const bcrypt = require('bcryptjs');
+const { authenticate } = require('../../auth/auth');
 const { generateToken } = require('../../auth/auth');
 
 router.get('/', async (req, res) => {
@@ -38,6 +39,12 @@ router.post('/register', async (req, res) => {
             token,
           });
         } else {
+          if(!user) {
+            res.status(400).json({ message: 'That username does not exist. Please try again.' });
+          }
+          if(user && bcrypt.compareSync(password, user.password)) {
+            res.status(401).json({ message: 'Invalid password. Please try again.' });
+          }
           res.status(401).json({ message: 'Invalid Credentials' });
         }
       });

@@ -23,12 +23,13 @@ function authenticate(req, res, next) {
 }
 
 function generateToken(user) {
-  const payload = {
-    sub: user.id,
+  const jwtPayload = {
+    subject: user.id,
     username: user.username
-  }
-  const options = {
+  };
+  const jwtSecret = process.env.JWT_SECRET || "Voter Secret";
+  const jwtOptions = {
     expiresIn: '1d',
   }
-  return jwt.sign(payload, env.jwtKey, options);
+  return jwt.sign(jwtPayload, jwtSecret, jwtOptions);
 }
